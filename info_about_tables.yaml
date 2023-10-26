@@ -1,0 +1,10 @@
+0:
+  source_data: https://random-data-api.com/api/cannabis/random_cannabis?size=10
+  column_nested_json: False
+  in_database: test_aero
+  out_table_name: cannabinoids
+1:
+  source_data: https://statsapi.web.nhl.com/api/v1/teams/21/stats
+  column_nested_json: [stats, splits, 0]
+  in_database: test_aero
+  out_table_name: colorado_avalanche

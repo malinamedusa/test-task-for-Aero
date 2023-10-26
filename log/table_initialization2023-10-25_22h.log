@@ -1,0 +1,248 @@
+2023-10-25 22:20:31,882 INFO response.status_code = 200
+2023-10-25 22:20:31,885 INFO DataFrame cannabinoids shape - (10, 14)
+2023-10-25 22:20:31,924 INFO Connection to server at localhost, database test_aero successfully
+2023-10-25 22:20:31,930 INFO Create table cannabinoids successfully
+2023-10-25 22:20:31,965 INFO DDL table is:
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'load_data', 'date') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'uid', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'strain', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'cannabinoid_abbreviation', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'cannabinoid', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'terpene', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'medical_use', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'health_benefit', 'text') 
+
+2023-10-25 22:20:31,965 INFO ('cannabinoids', 'category', 'text') 
+
+2023-10-25 22:20:31,966 INFO ('cannabinoids', 'type', 'text') 
+
+2023-10-25 22:20:31,966 INFO ('cannabinoids', 'buzzword', 'text') 
+
+2023-10-25 22:20:31,966 INFO ('cannabinoids', 'brand', 'text') 
+
+2023-10-25 22:20:31,966 INFO ('cannabinoids', 'id', 'text') 
+
+2023-10-25 22:20:31,966 INFO ('cannabinoids', 'load_hour', 'text') 
+
+2023-10-25 22:20:31,966 INFO connection.close()
+2023-10-25 22:20:32,081 INFO response.status_code = 200
+2023-10-25 22:20:32,090 INFO DataFrame colorado_avalanche shape - (2, 42)
+2023-10-25 22:20:32,111 INFO Connection to server at localhost, database test_aero successfully
+2023-10-25 22:20:32,114 INFO Create table colorado_avalanche successfully
+2023-10-25 22:20:32,133 INFO DDL table is:
+2023-10-25 22:20:32,133 INFO ('colorado_avalanche', 'load_data', 'date') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'type_gametype_postseason', 'boolean') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'type_gametype_id', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'type_gametype_description', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'type_gametype', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_gamesplayed', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_wins', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_losses', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_ot', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_pts', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_ptpctg', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_goalspergame', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_goalsagainstpergame', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_evggaratio', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_powerplaypercentage', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_powerplaygoals', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_powerplaygoalsagainst', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_powerplayopportunities', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_penaltykillpercentage', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_shotspergame', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_shotsallowed', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winscorefirst', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winoppscorefirst', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winleadfirstper', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winleadsecondper', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winoutshootopp', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_winoutshotbyopp', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_faceoffstaken', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_faceoffswon', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_faceoffslost', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_faceoffwinpercentage', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_shootingpctg', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'stat_savepctg', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'team_id', 'text') 
+
+2023-10-25 22:20:32,134 INFO ('colorado_avalanche', 'team_name', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'team_link', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'stat_penaltykillopportunities', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'stat_savepctrank', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'stat_shootingpctrank', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'copyright', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'load_hour', 'text') 
+
+2023-10-25 22:20:32,135 INFO ('colorado_avalanche', 'type_displayname', 'text') 
+
+2023-10-25 22:20:32,135 INFO connection.close()
+2023-10-25 22:32:17,596 INFO response.status_code = 200
+2023-10-25 22:32:17,600 INFO DataFrame cannabinoids shape - (10, 14)
+2023-10-25 22:32:17,635 INFO Connection to server at localhost, database test_aero successfully
+2023-10-25 22:32:17,637 INFO Create table cannabinoids successfully
+2023-10-25 22:32:17,652 INFO DDL table is:
+2023-10-25 22:32:17,652 INFO ('cannabinoids', 'load_data', 'date') 
+
+2023-10-25 22:32:17,652 INFO ('cannabinoids', 'uid', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'strain', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'cannabinoid_abbreviation', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'cannabinoid', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'terpene', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'medical_use', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'health_benefit', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'category', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'type', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'buzzword', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'brand', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'id', 'text') 
+
+2023-10-25 22:32:17,653 INFO ('cannabinoids', 'load_hour', 'text') 
+
+2023-10-25 22:32:17,653 INFO connection.close()
+2023-10-25 22:32:18,065 INFO response.status_code = 200
+2023-10-25 22:32:18,083 INFO DataFrame colorado_avalanche shape - (2, 42)
+2023-10-25 22:32:18,103 INFO Connection to server at localhost, database test_aero successfully
+2023-10-25 22:32:18,107 INFO Create table colorado_avalanche successfully
+2023-10-25 22:32:18,124 INFO DDL table is:
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'load_data', 'date') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'type_gametype_postseason', 'boolean') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'type_gametype_id', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'type_gametype_description', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'type_gametype', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_gamesplayed', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_wins', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_losses', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_ot', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_pts', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_ptpctg', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_goalspergame', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_goalsagainstpergame', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_evggaratio', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_powerplaypercentage', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_powerplaygoals', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_powerplaygoalsagainst', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_powerplayopportunities', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_penaltykillpercentage', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_shotspergame', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_shotsallowed', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winscorefirst', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winoppscorefirst', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winleadfirstper', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winleadsecondper', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winoutshootopp', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_winoutshotbyopp', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_faceoffstaken', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_faceoffswon', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_faceoffslost', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_faceoffwinpercentage', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_shootingpctg', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_savepctg', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'team_id', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'team_name', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'team_link', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_penaltykillopportunities', 'text') 
+
+2023-10-25 22:32:18,125 INFO ('colorado_avalanche', 'stat_savepctrank', 'text') 
+
+2023-10-25 22:32:18,126 INFO ('colorado_avalanche', 'stat_shootingpctrank', 'text') 
+
+2023-10-25 22:32:18,126 INFO ('colorado_avalanche', 'copyright', 'text') 
+
+2023-10-25 22:32:18,126 INFO ('colorado_avalanche', 'load_hour', 'text') 
+
+2023-10-25 22:32:18,126 INFO ('colorado_avalanche', 'type_displayname', 'text') 
+
+2023-10-25 22:32:18,126 INFO connection.close()
