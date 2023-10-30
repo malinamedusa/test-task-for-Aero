@@ -23,7 +23,9 @@ class LoadingDataHTTPtoPG:
         self.table_name = info_object['out_table_name']
 
         self.load_data = str(datetime.now().date())
-        self.load_hour = datetime.now().hour
+        self.load_hour = str(datetime.now().hour)
+
+        self.response = None
 
         self.dataframe = None
         self.data_type = dict()
@@ -34,19 +36,18 @@ class LoadingDataHTTPtoPG:
         self.filename = f'{filename}{self.load_data}_{self.load_hour}h.log'
         logging.basicConfig(level=logging.INFO,
                             filename=self.filename,
-                            filemode="a",
-                            format="%(asctime)s %(levelname)s %(message)s")
+                            filemode='a',
+                            format='%(asctime)s %(levelname)s %(message)s')
 
     def get_data_to_pandas(self):
-        response_status = 0
         try:
-            response = requests.get(url=self.url)
-            self.dataframe = pd.read_json(StringIO(response.text))
-            response_status = response.status_code
-            logging.info(f'response.status_code = {response_status}')
-            assert response_status == 200
+            self.response = requests.get(url=self.url)
+            self.dataframe = pd.read_json(StringIO(self.response.text))
+            assert self.response.status_code == 200
         except AssertionError:
-            logging.error(f'response.status_code = {response_status}')
+            logging.error(f'response.status_code = {self.response.status_code}')
+        else:
+            logging.info(f'response.status_code = {self.response.status_code}')
 
         if self.column_nested_json:
 
@@ -54,7 +55,6 @@ class LoadingDataHTTPtoPG:
                 sub_df = pd.json_normalize(self.dataframe[column], sep='_')
                 self.dataframe = self.dataframe.join(sub_df, how='left')
                 self.dataframe.pop(column)
-        self.dataframe.fillna('NULL', inplace=True)
 
     def add_tech_columns(self):
         self.dataframe['load_data'] = self.load_data
@@ -83,92 +83,107 @@ class LoadingDataHTTPtoPG:
         else:
             logging.info(f'Connection to server at {self.host}, database {self.database} successfully')
 
+    def connection_close(self):
+        self.connection.close()
+        logging.info('connection.close()')
+
     def delete_table(self):
-        query = f'DELETE FROM {self.table_name};'
+        query = f"""DELETE FROM {self.table_name}"""
         try:
             self.cursor.execute(query)
         except psycopg2.errors.SyntaxError as err:
             logging.error(f'{err} Delete table {self.table_name} failed with query {query}')
+            self.connection_close()
         else:
             logging.info(f'Delete table {self.table_name} successfully')
 
-        check_query = f'SELECT * FROM {self.table_name};'
+    def check_delete_table(self):
+        result = ''
+        check_query = f"""SELECT * FROM {self.table_name}"""
         try:
             self.cursor.execute(check_query)
-            res = self.cursor.fetchall()
-            assert res == []
+            result = self.cursor.fetchall()
+            assert result == []
         except AssertionError:
-            logging.error(f'Row in table {self.table_name} if exists - {res} row')
+            logging.error(f'Row in table {self.table_name} if exists - {result} row')
+            self.connection_close()
         except psycopg2.errors.SyntaxError as err:
             logging.error(f'{err} Execute row count failed with {check_query}')
+            self.connection_close()
         else:
-            logging.info(f'No row in table {self.table_name} - {res}')
+            logging.info(f'No row in table {self.table_name} - {result}')
 
     def create_table(self):
         query = ''
 
-        for col, type in self.data_type.items():
-            query += f"{col} {type}, "
+        for col, type_data in self.data_type.items():
+            query += f"""{col} {type_data}, """
 
         query = f"""CREATE TABLE IF NOT EXISTS {self.table_name} ({query[:-2]})"""
         try:
             self.cursor.execute(query)
         except psycopg2.errors.SyntaxError as err:
             logging.error(f'{err} Create table {self.table_name} failed with query {query}')
+            self.connection_close()
         else:
             logging.info(f'Create table {self.table_name} successfully')
 
     def describe_table(self):
-        query = f'''SELECT table_name, column_name, data_type ''' \
-                f'''FROM information_schema.columns ''' \
-                f'''WHERE table_name = '{self.table_name}';'''
+        query = f"""SELECT table_name, column_name, data_type """ \
+                f"""FROM information_schema.columns """ \
+                f"""WHERE table_name = '{self.table_name}'"""
         try:
             self.cursor.execute(query)
             res = self.cursor.fetchall()
         except psycopg2.errors.SyntaxError as err:
             logging.error(f'{err} Execute row count failed with {query}')
-
+            self.connection_close()
         else:
-            logging.info(f"DDL table is:")
+            logging.info(f'Describe table: ')
             for row in res:
-                logging.info(f"{row} \n")
+                logging.info(f'{row}')
 
     def insert_table(self):
         insert_query = f"""INSERT INTO {self.table_name} ({', '.join(self.dataframe.columns)}) VALUES """
 
         for row in self.dataframe.values:
-            insert_query += '('
-            for val in row:
-                if isinstance(val, bool) or val == "NULL":
-                    insert_query += f"{val}, "
+            insert_query += """("""
+            for value in row:
+                if pd.isnull(value):
+                    insert_query += """NULL, """
+                elif isinstance(value, bool):
+                    insert_query += f"""{value}, """
                 else:
-                    insert_query += "$$" + str(val) + "$$, "
-            insert_query = insert_query[:-2] + "),"
+                    insert_query += f"""$${str(value)}$$, """
+            insert_query = f"""{insert_query[:-2]}), """
+        print(insert_query)
         try:
-            self.cursor.execute(insert_query[:-1])
+            self.cursor.execute(insert_query[:-2])
         except psycopg2.errors.SyntaxError as err:
             logging.error(f'{err} Insert into table {self.table_name} failed with query {insert_query}')
+            self.connection_close()
         except psycopg2.errors.InvalidTextRepresentation as err:
             logging.error(f'{err} Insert into table {self.table_name} failed with query {insert_query}')
+            self.connection_close()
+        except psycopg2.errors.DatetimeFieldOverflow as err:
+            logging.error(f'{err} Insert into table {self.table_name} failed with query {insert_query}')
+            self.connection_close()
         else:
             logging.info(f'Insert in table {self.table_name} successfully')
 
     def check_added_data(self):
-        query = f'''SELECT count(*) ''' \
-                f'''FROM {self.table_name} ''' \
-                f'''WHERE load_data = '{self.load_data}' AND load_hour = '{self.load_hour}';'''
+        query = f"""SELECT count(*) """ \
+                f"""FROM {self.table_name} """ \
+                f"""WHERE load_data = '{self.load_data}' AND load_hour = '{self.load_hour}'"""
         try:
             self.cursor.execute(query)
-            res = self.cursor.fetchall()
-            row_count = int(str(res)[2:-3])
+            row_count = self.cursor.fetchall()[0][0]
             assert row_count != 0
-        except AssertionError:
-            logging.error(f'NO ROW COUNT in table {self.table_name}')
+        except AssertionError as err:
+            logging.error(f'{err} - NO ROW COUNT in table {self.table_name}')
+            self.connection_close()
         except psycopg2.errors.SyntaxError as err:
-            logging.error(f'{err} Execute row count failed with {query}')
+            logging.error(f'{err} - Execute row count failed with {query}')
+            self.connection_close()
         else:
             logging.info(f'Row count added in table {self.table_name} - {row_count}')
-
-    def connection_close(self):
-        self.connection.close()
-        logging.info('connection.close()')
