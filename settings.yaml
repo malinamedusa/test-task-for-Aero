@@ -1,3 +1,4 @@
-user: *
-password: *
-host: *
+postgres:
+  user: malinamedusa
+  password: *
+  host: *
