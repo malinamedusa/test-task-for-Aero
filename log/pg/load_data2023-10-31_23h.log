@@ -1,0 +1,24 @@
+2023-10-31 22:19:16,337 INFO Logger is started
+2023-10-31 22:19:16,338 INFO Connecting to test_aero ...
+2023-10-31 22:19:16,380 INFO Connection to server at localhost, database test_aero successfully
+2023-10-31 22:19:16,380 INFO connection.autocommit = True
+2023-10-31 22:19:16,949 INFO response.status_code = 200
+2023-10-31 22:19:16,952 INFO Create tmp/df__cannabinoids.json successfully
+2023-10-31 22:19:16,983 INFO Table cannabinoids is exists
+2023-10-31 22:19:16,996 INFO Reading file cannabinoids successfully
+2023-10-31 22:19:17,004 INFO Insert in table cannabinoids successfully
+2023-10-31 22:19:17,005 INFO Row count added in table cannabinoids - 10
+2023-10-31 22:19:17,005 INFO Connection postgres close
+2023-10-31 22:19:17,006 INFO Remove tmp/df__cannabinoids.json successfully
+2023-10-31 22:19:17,007 INFO Connecting to test_aero ...
+2023-10-31 22:19:17,024 INFO Connection to server at localhost, database test_aero successfully
+2023-10-31 22:19:17,025 INFO connection.autocommit = True
+2023-10-31 22:19:17,441 INFO response.status_code = 200
+2023-10-31 22:19:17,455 INFO DataFrame colorado_avalanche shape - (2, 40)
+2023-10-31 22:19:17,456 INFO Create tmp/df__colorado_avalanche.json successfully
+2023-10-31 22:19:17,485 INFO Table colorado_avalanche is exists
+2023-10-31 22:19:17,505 INFO Reading file colorado_avalanche successfully
+2023-10-31 22:19:17,515 INFO Insert in table colorado_avalanche successfully
+2023-10-31 22:19:17,517 INFO Row count added in table colorado_avalanche - 2
+2023-10-31 22:19:17,517 INFO Connection postgres close
+2023-10-31 22:19:17,518 INFO Remove tmp/df__colorado_avalanche.json successfully

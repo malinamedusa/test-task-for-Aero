@@ -1,0 +1,84 @@
+2023-10-31 22:16:51,564 INFO Logger is started
+2023-10-31 22:16:51,565 INFO Connecting to test_aero ...
+2023-10-31 22:16:51,595 INFO Connection to server at localhost, database test_aero successfully
+2023-10-31 22:16:51,595 INFO connection.autocommit = True
+2023-10-31 22:16:52,128 INFO response.status_code = 200
+2023-10-31 22:16:52,131 INFO Create tmp/df__cannabinoids.json successfully
+2023-10-31 22:16:52,168 INFO Table cannabinoids not exists, need create
+2023-10-31 22:16:52,174 INFO Create table cannabinoids successfully
+2023-10-31 22:16:52,186 INFO Describe table: 
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'load_data', 'date')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'load_hour', 'smallint')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'strain', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'cannabinoid_abbreviation', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'cannabinoid', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'terpene', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'medical_use', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'id', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'category', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'type', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'buzzword', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'brand', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'health_benefit', 'text')
+2023-10-31 22:16:52,186 INFO ('cannabinoids', 'uid', 'text')
+2023-10-31 22:16:52,199 INFO Reading file cannabinoids successfully
+2023-10-31 22:16:52,203 INFO Insert in table cannabinoids successfully
+2023-10-31 22:16:52,204 INFO Row count added in table cannabinoids - 10
+2023-10-31 22:16:52,204 INFO Connection postgres close
+2023-10-31 22:16:52,204 INFO Remove tmp/df__cannabinoids.json successfully
+2023-10-31 22:16:52,205 INFO Connecting to test_aero ...
+2023-10-31 22:16:52,219 INFO Connection to server at localhost, database test_aero successfully
+2023-10-31 22:16:52,219 INFO connection.autocommit = True
+2023-10-31 22:16:52,712 INFO response.status_code = 200
+2023-10-31 22:16:52,726 INFO DataFrame colorado_avalanche shape - (2, 40)
+2023-10-31 22:16:52,728 INFO Create tmp/df__colorado_avalanche.json successfully
+2023-10-31 22:16:52,756 INFO Table colorado_avalanche not exists, need create
+2023-10-31 22:16:52,762 INFO Create table colorado_avalanche successfully
+2023-10-31 22:16:52,772 INFO Describe table: 
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'load_data', 'date')
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'load_hour', 'smallint')
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'type_gametype_id', 'text')
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'type_gametype_description', 'text')
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'type_gametype_postseason', 'text')
+2023-10-31 22:16:52,772 INFO ('colorado_avalanche', 'type_gametype', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_gamesplayed', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_wins', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_losses', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_ot', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_pts', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_ptpctg', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_goalspergame', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_goalsagainstpergame', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_evggaratio', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_powerplaypercentage', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_powerplaygoals', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_powerplaygoalsagainst', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_powerplayopportunities', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_penaltykillpercentage', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_shotspergame', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_shotsallowed', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_winscorefirst', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_winoppscorefirst', 'text')
+2023-10-31 22:16:52,773 INFO ('colorado_avalanche', 'stat_winleadfirstper', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_winleadsecondper', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_winoutshootopp', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_winoutshotbyopp', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_faceoffstaken', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_faceoffswon', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_faceoffslost', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_faceoffwinpercentage', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_shootingpctg', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_savepctg', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'team_id', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'team_name', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'copyright', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_penaltykillopportunities', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_savepctrank', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'stat_shootingpctrank', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'team_link', 'text')
+2023-10-31 22:16:52,774 INFO ('colorado_avalanche', 'type_displayname', 'text')
+2023-10-31 22:16:52,795 INFO Reading file colorado_avalanche successfully
+2023-10-31 22:16:52,799 INFO Insert in table colorado_avalanche successfully
+2023-10-31 22:16:52,801 INFO Row count added in table colorado_avalanche - 2
+2023-10-31 22:16:52,801 INFO Connection postgres close
+2023-10-31 22:16:52,801 INFO Remove tmp/df__colorado_avalanche.json successfully
